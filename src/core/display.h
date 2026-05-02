@@ -83,7 +83,7 @@ public:
 protected:
 	virtual void draw_pixel(int x, int y, unsigned int rgb)
 	{
-		if ((x >= m_width) || (y >= m_height)) { return; }
+		if ((x < 0) || (y < 0) || (x >= m_width) || (y >= m_height)) { return; }
 
 		if (m_driver && m_driver->draw_pixel)
 		{
